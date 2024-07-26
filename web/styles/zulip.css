@@ -106,7 +106,15 @@ body {
         #compose-container {
             max-width: inherit;
         }
+
+        nav .column-left {
+            margin-left: 0.4em !important;
+        }
     }
+}
+
+#message_view_header > span.narrow_description.rendered_markdown.single-line-rendered-markdown > .help_link_widget {
+    display: none;
 }
 
 input,
@@ -1073,6 +1081,7 @@ div.focused-message-list.is-conversation-view .recipient_row {
     justify-content: center;
     width: var(--header-height);
     height: var(--header-height);
+    display: none;
 
     &:hover {
         background-color: var(--color-header-button-hover);
@@ -1133,20 +1142,23 @@ nav {
         text-align: left;
         display: flex;
         justify-content: left;
-        gap: 4px;
+        margin-left: 15px;
 
         .brand {
             display: flex;
             align-items: center;
+            height: var(--header-height);
         }
 
         .nav-logo {
             display: inline-block;
-            height: 1.25em; /* 20px at 16px em */
+            height: 1.5625em; /* 25px at 16px em */
             max-width: var(--realm-logo-max-width);
+            top: 1px;
+            position: relative;
 
             @media (height < $short_navbar_cutoff_height) {
-                height: 0.9375em; /* 15px at 16px em */
+                height: 1.1em;
             }
         }
 
@@ -1691,6 +1703,17 @@ div.toggle_resolve_topic_spinner .loading_indicator_spinner {
                 padding-left: 10px;
                 width: var(--left-sidebar-width);
             }
+        }
+    }
+
+    #header-container .left-sidebar-toggle-button {
+        display: flex !important;
+    }
+
+    nav {
+        .column-left {
+            margin-left: 0 !important;
+            gap: 4px;
         }
     }
 }
