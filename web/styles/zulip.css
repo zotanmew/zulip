@@ -50,7 +50,15 @@ body {
         #compose-container {
             max-width: inherit;
         }
+
+        nav .column-left {
+            margin-left: 10px !important;
+        }
     }
+}
+
+#message_view_header > span.narrow_description.rendered_markdown.single-line-rendered-markdown > .help_link_widget {
+    display: none;
 }
 
 input,
@@ -1235,6 +1243,7 @@ div.focused-message-list {
     justify-content: center;
     width: var(--header-height);
     height: var(--header-height);
+    display: none;
 
     &:hover {
         background-color: var(--color-header-button-hover);
@@ -1284,20 +1293,23 @@ nav {
         text-align: left;
         display: flex;
         justify-content: left;
-        gap: 4px;
+        margin-left: 15px;
 
         .brand {
             display: flex;
             align-items: center;
+            height: var(--header-height);
         }
 
         .nav-logo {
             display: inline-block;
-            height: 20px;
+            height: 25px;
             max-width: 200px;
+            top: 1px;
+            position: relative;
 
             @media (height < $short_navbar_cutoff_height) {
-                height: 15px;
+                height: 20px;
             }
         }
 
@@ -1815,6 +1827,17 @@ div.toggle_resolve_topic_spinner .loading_indicator_spinner {
                 padding-left: 10px;
                 width: var(--left-sidebar-width);
             }
+        }
+    }
+
+    #header-container .left-sidebar-toggle-button {
+        display: flex !important;
+    }
+
+    nav {
+        .column-left {
+            margin-left: 0 !important;
+            gap: 4px;
         }
     }
 }
